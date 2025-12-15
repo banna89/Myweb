@@ -1,27 +1,21 @@
-function doPost(e) {
-  try {
-    var sheet = SpreadsheetApp
-      .getActiveSpreadsheet()
-      .getActiveSheet();
+// JavaScript for validation
+const form = document.querySelector('form[name="registration-form"]');
 
-    sheet.appendRow([
-      new Date(),                       // Time
-      e.parameter["full-name"] || "",   // Full Name
-      e.parameter["mobile"] || "",      // Mobile
-      e.parameter["email"] || "",       // Email
-      e.parameter["state"] || "",       // State
-      e.parameter["city"] || "",        // City
-      e.parameter["gender"] || "",      // Gender
-      e.parameter["age"] || ""          // Age
-    ]);
+form.addEventListener('submit', function(event) {
+    const fullName = document.getElementById('full-name').value.trim();
+    const mobile = document.getElementById('mobile').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const state = document.getElementById('state').value;
+    const city = document.getElementById('city').value.trim();
+    const age = document.getElementById('age').value;
+    const gender = document.querySelector('input[name="gender"]:checked');
 
-    return ContentService
-      .createTextOutput("Success")
-      .setMimeType(ContentService.MimeType.TEXT);
+    if (!fullName || !mobile || !email || !state || !city || !age || !gender) {
+        alert('Please fill in all required fields.');
+        event.preventDefault();
+        return;
+    }
 
-  } catch (error) {
-    return ContentService
-      .createTextOutput("Error: " + error)
-      .setMimeType(ContentService.MimeType.TEXT);
-  }
-}
+    // Additional basic validations if needed
+    // Form will proceed to Netlify if all fields are filled
+});
