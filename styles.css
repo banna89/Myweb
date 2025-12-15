@@ -1,0 +1,111 @@
+/* Modern CSS with light blue/white theme */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff; /* Light blue background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.form-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff; /* Light blue accent */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.mobile-group {
+    display: flex;
+    align-items: center;
+}
+
+.mobile-prefix {
+    padding: 10px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-weight: bold;
+}
+
+.mobile-input {
+    flex: 1;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+}
+
+.gender-group {
+    display: flex;
+    gap: 15px;
+}
+
+.gender-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .gender-group {
+        flex-direction: column;
+    }
+}
